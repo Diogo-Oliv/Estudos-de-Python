@@ -5,10 +5,13 @@
 #-----------------------------------------------------------------------------------------------------------------------------------#
 
 # Lista de clientes.
+clientes = []
 
-clientes = ["Andre", "João", "Carlos", "Leonardo", "Luiz"]
+numClientes = int(input("Insira o número total de clientes: "))
 
-# Laço de repetição para iterar os nomes dentro da lista de clientes.
+for i in range(1, numClientes + 1):
+  cliente = input(f"Insira o nome do {i}° cliente: ")
+  clientes.append(cliente)
 
-for i in clientes:
-  print(i)
+for j in clientes:
+  print(j)
