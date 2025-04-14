@@ -1,4 +1,4 @@
-# Exercício 4 - Teste com Temperaturas
+# Exercício 4 - Teste de IMC.
 
 # Escreva um programa que realize o calculo do IMC de uma pessoa, leve em consideração as seguintes métricas:
 
