@@ -12,7 +12,7 @@ for linha in range(1, 6):
     print(caractere * linha)
 
 # Comando para inverter ou não o triângulo
-permissao = input("Gostaria de ver o triângulo de ponta cabeça? [S/N]").uper()
+permissao = input("Gostaria de ver o triângulo de ponta cabeça? [S/N]").upper()
 
 # Condicional para realizar a inversão.
 if permissao == "S":
