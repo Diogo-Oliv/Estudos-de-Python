@@ -4,6 +4,8 @@
 # onde o valor de cada elemento seja a soma dos seus índices (linha + coluna).
 
 #-----------------------------------------------------------------------------------------------------------------------------------#
+
+# Matriz que recebe dois list Comprehension de forma aninhada.
 matriz = [[linha + coluna for coluna in range(5)] for linha in range(5)]
 
 print(matriz)
