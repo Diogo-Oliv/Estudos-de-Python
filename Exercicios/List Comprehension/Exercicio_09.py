@@ -5,3 +5,9 @@
 
 #-----------------------------------------------------------------------------------------------------------------------------------#
 
+# Dados iniciais.
+dados = [[1, 2], [3, 4, 5], [6]]
+
+dadosUnicos = [dado for subdados in dados for dado in subdados]
+
+print(dadosUnicos)
