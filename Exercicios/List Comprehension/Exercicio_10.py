@@ -11,3 +11,10 @@
 # para processar as palavras de cada frase, aplicando o filtro e a transformação.
 
 #-----------------------------------------------------------------------------------------------------------------------------------#
+
+# Lista de frases.
+frases = ["sol e lua", "mar azul", "céu estrelado", "terra plana", "vento forte"]
+
+# O que fazer primeiro? 
+# Começar pelo 1. dividir as frases em palavras.
+frasesEmPalavras = [[]frases[palavra].split() for palavra in range(len(frases))]
