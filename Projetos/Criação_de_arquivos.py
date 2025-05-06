@@ -1,5 +1,6 @@
-# Criando arquivos para estudos de exercícios.
+# Criando arquivos para estudos de exercícios. PROTÓTIPO
 
+# Apresentação do programa.
 print("----------------------------------------------------------------------")
 print("-----------BEM VINDO AO CRIADOR DE ARQUIVOS PERSONALIZADOS------------")
 print("----------------------------------------------------------------------")
