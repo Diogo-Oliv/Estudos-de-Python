@@ -6,7 +6,9 @@ print("----------------------------------------------------------------------")
 print("-----------BEM VINDO AO CRIADOR DE ARQUIVOS PERSONALIZADOS------------")
 print("----------------------------------------------------------------------")
 #-----------------------------------------------------------------------------------------------------------------------------------#
-# Função para o método de Criação de arquivos.
+
+
+# Função para criar arquivos.
 def CriandoArquivos():
 
     # Try para realizar o tratamento de exceções.
@@ -24,7 +26,7 @@ Exemplos:   || .txt || .py || .md || .html || .css || \n \n""").lower()
 
             # Caso o usuário esqueça de inserir o . antes do início do tipo do arquivo.
             if "." not in extencaoArquivo:
-       
+
                 # Realizará a notificação do erro e apresentará novamente.
                 print("O tipo do arquivo não apresentou o . antes do tipo.")
                 extencaoArquivo = "." + extencaoArquivo
@@ -66,7 +68,27 @@ Exemplos:   || .txt || .py || .md || .html || .css || \n \n""").lower()
     # Tratamento de exceção para caso o arquivo já esteja criado no repositório específico.
     except FileExistsError:
         
-        print("Este arquivo já existe, tente realizar outra ação.")
+        print(f"Este arquivo de nome {nomeArquivo} já existe, tente realizar outra ação.")
+
+# Função para ler arquivos.
+def lendoArquivos():
+    
+    # Try para realizar o tratamento de exceções.
+    try:
+        
+        #
+        with open(file="E:\Diogo\MeusProjetos\Estudos-de-Python\Exercicios\List Comprehension\Exercicio_01.py", mode="r") as arquivo:
+            conteudo = arquivo.read()
+            print(conteudo)
+    
+    except FileNotFoundError:
+        
+        erroArquivoNaoEncontrado = input("O arquivo não existe, gostaria de criar um novo? [S/N]: ").upper()
+        
+        if erroArquivoNaoEncontrado != "N":
+            
+            CriandoArquivos()
+    
 
 # Método para criar o arquivo.
-CriandoArquivos()
+# CriandoArquivos()
