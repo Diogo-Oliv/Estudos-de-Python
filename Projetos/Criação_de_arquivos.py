@@ -6,7 +6,6 @@ print("----------------------------------------------------------------------")
 print("-----------BEM VINDO AO CRIADOR DE ARQUIVOS PERSONALIZADOS------------")
 print("----------------------------------------------------------------------")
 #-----------------------------------------------------------------------------------------------------------------------------------#
-
 # Função para o método de Criação de arquivos.
 def CriandoArquivos():
 
@@ -35,32 +34,39 @@ Exemplos:   || .txt || .py || .md || .html || .css || \n \n""").lower()
         # Tratamento de erro durante a requisição do path escolhido.
         caminhoArquivo = input("Insira o path onde se localizará o novo arquivo criado: \n \n")
     
+        # Variável que pede ao usuário o número de arquivos para criar.
+        quantidadeArquivos = int(input("Quantos arquivos você gostaria de criar? "))
+        
         # Laço for para controlar a quantidade de arquivos criados.
-        for i in range(3,5):
+        for i in range(1, quantidadeArquivos + 1):
+            
+            # Inserindo o nome do arquivo para o caso de serem diferentes.
+            nomeArquivo = input("Insira o nome do arquivo: ")
 
             # Usar o open com o mode x para criar o arquivo e escrever o número do exercício tanto no diretório quanto dentro dele utilizando o write.
-            with open(file=f"{caminhoArquivo}\Exercicio_{str(i)}{extencaoArquivo}", mode="x") as arquivo:
+            with open(file=f"{caminhoArquivo}\{nomeArquivo}{extencaoArquivo}", mode="x") as arquivo:
         
-                arquivo.write("# Exercicio " + str(i) + " - Dictionary Comprehension. \n \n")
+                # Mostra o número do arquivo sendo criado.
+                print(f"Criando o seu {i}° Arquivo de {quantidadeArquivos}")
 
+                # Pergunta ao usuário se é necessário adicionar alguma descrição.
                 descricaoPersonalizada = input("Gostaria de adicionar alguma descrição para o arquivo? [S/N]\n \n").upper()
                 
+                # Caso a resposta da descrição seja Sim, então inicia o laço While
                 while descricaoPersonalizada != "N":
                     
                     descricaoArquivo = input("Insira a descrição aqui: ")
-
                     arquivo.write("# "+ descricaoArquivo + "\n \n")
-
-                    descricaoPersonalizada = input("Deseja continuar?")
+                    descricaoPersonalizada = input("Deseja continuar? ")
                 
                 arquivo.write("#-----------------------------------------------------------------------------------------------------------------------------------#")
 
-        print("\n Arquivo(s) criados com sucesso.")
+        print("\n Arquivo(s) criado(s) com sucesso.")
     
     # Tratamento de exceção para caso o arquivo já esteja criado no repositório específico.
     except FileExistsError:
         
-        print("Este arquivo já esxiste tente realizar outra ação.")
+        print("Este arquivo já existe, tente realizar outra ação.")
 
 # Método para criar o arquivo.
 CriandoArquivos()
