@@ -21,7 +21,7 @@ def CriandoArquivos():
             # Variável que receberá o tipo do arquivo.
             extencaoArquivo = input("""Qual o tipo de arquivo que você gostaria de criar? 
 Exemplos:   || .txt || .py || .md || .html || .css || \n \n""").lower()
-    
+
             # Caso o usuário esqueça de inserir o . antes do início do tipo do arquivo.
             if "." not in extencaoArquivo:
        
