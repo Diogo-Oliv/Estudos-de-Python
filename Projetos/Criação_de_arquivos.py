@@ -211,7 +211,7 @@ class AlterarArquivos():
         
         except Exception as e:
             print(f"Ocorreu um erro inesperado durante a criação de arquivos: {e}")
-
+#-----------------------------------------------------------------------------------------------------------------------------------#
     # Função para ler arquivos.
     def lerArquivo(self):
         
@@ -234,7 +234,7 @@ class AlterarArquivos():
         
         except Exception as e:
             print(f"Ocorreu um erro ao ler o arquivo: {e}")
-            
+#-----------------------------------------------------------------------------------------------------------------------------------#   
 if __name__ == "__main__":
 
     programaArquivos = AlterarArquivos()
@@ -247,3 +247,4 @@ if __name__ == "__main__":
             break
     
     print("Programa finalizado.")
+#-----------------------------------------------------------------------------------------------------------------------------------#
