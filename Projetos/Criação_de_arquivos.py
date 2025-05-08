@@ -213,7 +213,7 @@ class AlterarArquivos():
             print(f"Ocorreu um erro inesperado durante a criação de arquivos: {e}")
 
     # Função para ler arquivos.
-    def lerArquivo():
+    def lerArquivo(self):
         
         print("\n----- Ler Arquivo(s) -----")
 
