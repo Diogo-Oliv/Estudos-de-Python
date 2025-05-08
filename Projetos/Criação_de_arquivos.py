@@ -77,24 +77,34 @@ class AlterarArquivos():
             while not tipoArquivoValido:
 
                 # Variavel que recebera o tipo do arquivo e trata caso tenha letras maiúsculas ou espaços extras.
-                extencaoArquivo = input("""Qual o tipo de arquivo que você gostaria de criar? Exemplos:
+                extencaoArquivoBruta = input("""Qual o tipo de arquivo que você gostaria de criar? Exemplos:
 || .txt || .py || .md || .html || .css || \n \n""").lower().strip()
 
+                extencaoArquivoNormalizada = "".join(extencaoArquivoBruta.split())
+                
                 # Verifica se a string é vazia.
-                if not extencaoArquivo:
+                if not extencaoArquivoNormalizada:
                     print("O tipo de arquivo não pode estar vazio.")
                     continue
 
                 # Caso o usuario esqueça de inserir o "." antes do inicio do tipo do arquivo.
-                if "." not in extencaoArquivo:
+                if not extencaoArquivoNormalizada.startswith("."):
 
                     # Realizara a notificacao e arruma.
                     print("O tipo do arquivo nao apresentou o . antes do tipo.")
-                    extencaoArquivo = "." + extencaoArquivo
+                    extensaoArquivo = "." + extencaoArquivoNormalizada
                     
                     # Mostra ao usuário a versão corrigida.
                     print(f"A extensão foi corrigida para: {extensaoArquivo}")
                 
+                else:
+                    extensaoArquivo = extencaoArquivoNormalizada
+                
+                if len(extensaoArquivo) <= 1:
+                    print("Extensão inválida. Deve conter caracteres após o ponto (ex: '.txt'). Tente novamente.")
+                    continue
+
+                print(f"A extensão do arquivo será definida como: {extensaoArquivo}") # Mensagem de confirmação
                 tipoArquivoValido = True
 
             # Tratamento de erro durante a requisicao do path escolhido.
@@ -139,7 +149,7 @@ class AlterarArquivos():
 
                     # Loop para validar o nome do arquivo.
                     while not nomeArquivoValido:
-                        nomeArquivo = input(f"Insira o nome do {i}º arquivo (sem a extensão): ").strip()
+                        nomeArquivo = input(f"Insira o nome do {i}º arquivo (sem a extensão): ")
 
                         if nomeArquivo:
                             nomeArquivoValido = True
