@@ -137,6 +137,7 @@ class AlterarArquivos():
                     nomeArquivoValido = False
                     nomeArquivo = ""
 
+                    # Loop para validar o nome do arquivo.
                     while not nomeArquivoValido:
                         nomeArquivo = input(f"Insira o nome do {i}º arquivo (sem a extensão): ").strip()
 
@@ -209,6 +210,7 @@ class AlterarArquivos():
             
                 print("\nProcesso de criação de arquivo(s) concluído.")
         
+        # Captura as exceções inesperadas durante o processo.
         except Exception as e:
             print(f"Ocorreu um erro inesperado durante a criação de arquivos: {e}")
 #-----------------------------------------------------------------------------------------------------------------------------------#
@@ -217,21 +219,28 @@ class AlterarArquivos():
         
         print("\n----- Ler Arquivo(s) -----")
 
+        # Inicia o tratamento de exceções futuras.
         try:
 
+            # Pede ao usuário o caminho do arquivo.
             caminhoArquivoLeitura = input("Digite o caminho completo do arquivo que deseja ler: ").strip()
 
+            # Se o caminho for vazio, nada acontece
             if not caminhoArquivoLeitura:
                 print("O caminho do arquivo não pode ser vazio.")
                 return
             
+            # Usa o open() em conjunto do uso das variaveis adquiridas ate agora para a criacao do arquivo.
+            # O modo "r" lê o arquivo e falha se ele não existir. 
             with open(file=caminhoArquivoLeitura, mode="r", encoding="utf-8") as arquivo:
                 print("\nConteúdo do arquivo:")
                 print(arquivo.read())
         
+        # Captura a exceção caso o arquivo não seja encontrado.
         except FileNotFoundError:
             print(f"Erro: Arquivo '{caminhoArquivoLeitura}' não encontrado.")
         
+        # Captura alguma exceção inesperada durante o processo. 
         except Exception as e:
             print(f"Ocorreu um erro ao ler o arquivo: {e}")
 #-----------------------------------------------------------------------------------------------------------------------------------#   
