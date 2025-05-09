@@ -5,3 +5,9 @@
 # e os preços são os valores (como inteiros).
 
 #-----------------------------------------------------------------------------------------------------------------------------------#
+
+itens = ["produto1=10", "produto2=25", "produto3=5"]
+
+produtos = [item.split("=") for item in itens]
+
+print(produtos)

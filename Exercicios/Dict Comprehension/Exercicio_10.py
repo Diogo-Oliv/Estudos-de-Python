@@ -5,3 +5,6 @@
 # mas apenas para as pessoas com idade inferior a 30 anos.
 
 #-----------------------------------------------------------------------------------------------------------------------------------#
+
+dados = [{"nome": "Alice", "idade": 30}, {"nome": "Bob", "idade": 25}, {"nome": "Charlie", "idade": 35}]
+
