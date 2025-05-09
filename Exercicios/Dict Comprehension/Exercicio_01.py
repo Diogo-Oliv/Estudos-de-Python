@@ -4,6 +4,6 @@
 
 #-----------------------------------------------------------------------------------------------------------------------------------#
 
-cubos = {numero: numero**3 for numero in range(1, 6)}
+cubos = {numero: numero ** 3 for numero in range(1, 6)}
 
 print(cubos)
