@@ -10,4 +10,6 @@ itens = ["produto1=10", "produto2=25", "produto3=5"]
 
 produtos = [item.split("=") for item in itens]
 
-print(produtos)
+dicionario = {produto[0]: produto[1] for produto in produtos}
+
+print(dicionario)
