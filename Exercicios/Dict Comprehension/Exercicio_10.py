@@ -8,3 +8,6 @@
 
 dados = [{"nome": "Alice", "idade": 30}, {"nome": "Bob", "idade": 25}, {"nome": "Charlie", "idade": 35}]
 
+data = {item["nome"].upper(): item["idade"] for item in dados if item["idade"] < 30}
+
+print(data)
