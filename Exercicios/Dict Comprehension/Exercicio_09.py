@@ -8,8 +8,6 @@
 
 itens = ["produto1=10", "produto2=25", "produto3=5"]
 
-produtos = [item.split("=") for item in itens]
+produtos = {item.split("=")[0].lower(): int(item.split("=")[1]) for item in itens}
 
-dicionario = {produto[0]: produto[1] for produto in produtos}
-
-print(dicionario)
+print(produtos)
